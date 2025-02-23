@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Branch Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .dark-mode {
+            background-color: #222;
+            color: #f4f4f4;
+        }
+        .dark-mode .container {
+            background: #333;
+            color: white;
+        }
+        .toggle-btn {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
+        #userData {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <div class="container">
+        <h1>Enter Your Details</h1>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="college">College:</label>
+                <input type="text" id="college" required>
+            </div>
+            <div class="form-group">
+                <label for="branch">Choose the branch interested in B.Tech:</label>
+                <select id="branch" required>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Electronics and Communication">Electronics and Communication</option>
+                    <option value="Chemical Engineering">Chemical Engineering</option>
+                    <option value="Aerospace Engineering">Aerospace Engineering</option>
+                    <option value="Biotechnology">Biotechnology</option>
+                    <option value="Automobile Engineering">Automobile Engineering</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Robotics Engineering">Robotics Engineering</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Mining Engineering">Mining Engineering</option>
+                    <option value="Petroleum Engineering">Petroleum Engineering</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="userData"></div>
+    </div><script>
+    document.getElementById("userForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const college = document.getElementById('college').value;
+        const branch = document.getElementById('branch').value;
+
+        console.log(`Name: ${name}, College: ${college}, Branch: ${branch}`);
+
+        document.getElementById('userForm').reset();
+    });
+
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
+
+</body>
+</html>
